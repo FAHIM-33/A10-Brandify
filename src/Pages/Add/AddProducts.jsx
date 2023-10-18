@@ -25,15 +25,25 @@ const AddProducts = () => {
         }
         // console.log("Your input data:",data)
 
-        // https://assignment-10-gz5v9xwe7-sh-fahims-projects.vercel.app
-        // http://localhost:5000/
-        axios.post('http://localhost:5000/product', data, { headers: { "content-type": "application/json" } })
+
+        axios.post('https://assignment-10-pied.vercel.app/product', data, { headers: { "content-type": "application/json" } })
+            // axios.post('http://localhost:5000/product', data, { headers: { "content-type": "application/json" } })
             .then(() => {
-                console.log("Succesfully posted")
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Great!',
+                    text: 'Added succesfully!',
+                    footer: '<a href="">Product has been added</a>'
+                })
 
             })
             .catch(() => {
-                console.log('something wrong')
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                })
             })
     }
 
