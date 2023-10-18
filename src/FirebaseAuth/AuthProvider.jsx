@@ -9,7 +9,7 @@ export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
 
     let googleProvider = new GoogleAuthProvider();
-    let [user, setUser] = useState(null)
+    let [user, setUser] = useState({})
     let [loading, setLoading] = useState(true)
 
     const Toast = Swal.mixin({

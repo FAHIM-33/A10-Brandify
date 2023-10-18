@@ -92,7 +92,7 @@ const AddProducts = () => {
 
 
                 </div>
-                <input type="submit" value="Submit" className="bg-amber-400 block w-1/2 mx-auto text-lg font-medium my-4 " />
+                <input type="submit" value="Add Product" className="bg-amber-400 block w-1/2 mx-auto text-lg font-medium my-4 " />
             </form>
         </div>
     );

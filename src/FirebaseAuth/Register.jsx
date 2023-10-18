@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     let { createUser, update, googleLogin, Toast } = useContext(AuthContext)
-
+    let nav = useNavigate()
     const handleRegister = (e) => {
         e.preventDefault()
         let email = e.target.email.value
@@ -41,7 +41,7 @@ const Register = () => {
                     title: 'Registered successfully'
                 })
                 update(name, url)
-                    .then(() => console.log("Navigate to home"))
+                    .then(() => nav('/'))
                     .catch((error) => Toast.fire({
                         icon: 'error',
                         title: error.code
@@ -58,10 +58,16 @@ const Register = () => {
         e.preventDefault()
         googleLogin()
             .then(() => {
-                //SWeet here
-                // nav('/')
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Logged in with Google'
+                })
+                nav('/')
             })
-        // .catch((error) => toast.error(error.code))   edit deze
+            .catch((error) => Toast.fire({
+                icon: 'error',
+                title: error.code
+            }))
 
     }
 
@@ -96,7 +102,7 @@ const Register = () => {
                     <input type="text" name="url" id="url" placeholder="Image URL"
                         className="" />
                 </div>
-                
+
                 <div className='md:mt-8 mt-4'>
                     <label htmlFor="email"
                         className=''
