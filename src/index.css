@@ -42,7 +42,13 @@ input:focus{
     outline: 3px solid #fbbf24;
 }
 
-
+.btn{
+    transition: all 0.2s;
+}
+.btn:hover{
+    scale: 1.04;
+    opacity: 0.8;
+}
 
 
 
