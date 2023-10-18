@@ -9,9 +9,7 @@ const Navbar = () => {
     let links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/add'>Add product</NavLink>
-        {/* <NavLink to='/'>Home</NavLink>
-        <NavLink to='/'>Home</NavLink> 
-        <NavLink to='/'>Home</NavLink> */}
+        <NavLink to='/cart'>My Cart</NavLink>
     </>
 
 

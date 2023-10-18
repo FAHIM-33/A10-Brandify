@@ -26,14 +26,14 @@ const AddProducts = () => {
         // console.log("Your input data:",data)
 
 
+        // axios.post('http://localhost:5000/product', data, { headers: { "content-type": "application/json" } })
         axios.post('https://assignment-10-pied.vercel.app/product', data, { headers: { "content-type": "application/json" } })
-            // axios.post('http://localhost:5000/product', data, { headers: { "content-type": "application/json" } })
             .then(() => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Great!',
                     text: 'Added succesfully!',
-                    footer: '<a href="">Product has been added</a>'
+                    footer: 'Product has been added'
                 })
 
             })
@@ -42,7 +42,7 @@ const AddProducts = () => {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong!',
-                    footer: '<a href="">Why do I have this issue?</a>'
+                    footer: 'Try again'
                 })
             })
     }
@@ -82,7 +82,7 @@ const AddProducts = () => {
                     <div className="p-4 lg:p-8">
                         <label htmlFor="rating">Rating:</label>
                         <br />
-                        <input type="number" placeholder="Rating" name="rating" className="" />
+                        <input type="text" placeholder="Rating" name="rating" className="" />
                     </div>
                     <div className="p-4 lg:p-8">
                         <label htmlFor="discription">Short discription:</label>

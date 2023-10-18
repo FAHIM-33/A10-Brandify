@@ -11,6 +11,11 @@ import AuthProvider from './FirebaseAuth/AuthProvider'
 import PrivateRoute from './FirebaseAuth/PrivateRoute'
 import Login from './FirebaseAuth/Login'
 import Register from './FirebaseAuth/Register'
+import MyCart from './Pages/MyCart/MyCart'
+import BrandPage from './Pages/BrandPage.jsx/BrandPage'
+import axios from 'axios'
+import Update from './Pages/Update/Update'
+import Details from './Pages/Details/Details'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +38,25 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/cart',
+        element: <MyCart></MyCart>,
+      },
+      {
+        path: '/brand/:title',
+        element: <BrandPage></BrandPage>,
+        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.title}`)
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>,
+        loader: ({ params }) => axios.get(`http://localhost:5000/update/${params.id}`)
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>,
+        loader: ({ params }) => axios.get(`http://localhost:5000/details/${params.id}`)
       },
     ]
 
