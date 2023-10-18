@@ -2,7 +2,6 @@ import { AuthContext } from "./AuthProvider";
 import { useContext } from "react";
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
-import Swal from "sweetalert2";
 
 const Register = () => {
     let { createUser, update, googleLogin, Toast } = useContext(AuthContext)
