@@ -11,7 +11,7 @@ const BrandPage = () => {
         <div className="my-12">
             <h1 className=" text-3xl lg:text-5xl text-mid font-medium bg-fadegray my-4 p-4 text-center">{brand.title} products</h1>
 
-            <div className="flex flex-wrap gap-8 p-4 justify-center ">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 p-8 lg:p-4 justify-center ">
                 {
                     data.length > 0 ?
                     data.map(obj => <Product
