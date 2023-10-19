@@ -12,7 +12,7 @@ const Locations = () => {
     console.log(location)
     return (
         <div className="my-16">
-            <h2 className="text-5xl text-mid text-center">Our locations</h2>
+            <h2 className="text-center text-2xl lg:text-5xl  lg:mb-8 text-low bg-fadegray p-2">Our locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4 rounded-md border-2 border-low m-4">
                 {
                     location.map(obj => <LocationCard
