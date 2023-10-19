@@ -13,7 +13,7 @@ const MyCart = () => {
             <h1 className='text-5xl text-center text-mid'>Your Cart</h1>
             {
                 cart.length > 0 ?
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-lg p-8 w-4/5 mx-auto border-2 border-low'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-lg p-4 lg:p-8  lg:w-4/5 mx-2 lg:mx-auto border-2 border-low'>
                         {
                             cart.map(obj => <CartCard
                                 key={obj._id}

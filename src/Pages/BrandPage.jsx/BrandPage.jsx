@@ -9,9 +9,9 @@ const BrandPage = () => {
 
     return (
         <div className="my-12">
-            <h1 className="text-5xl text-mid font-medium bg-fadegray my-4 p-4 text-center">{brand.title} products</h1>
+            <h1 className=" text-3xl lg:text-5xl text-mid font-medium bg-fadegray my-4 p-4 text-center">{brand.title} products</h1>
 
-            <div className="flex gap-8 overflow-auto p-4 flex-wrap">
+            <div className="flex flex-wrap gap-8 p-4 justify-center ">
                 {
                     data.length > 0 ?
                     data.map(obj => <Product

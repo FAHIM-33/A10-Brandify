@@ -13,15 +13,15 @@ const Product = ({ data }) => {
             <div className="flex my-2   ">
                 <p className=" pl-2 text-low ">{type} by</p>
                 <p className="  px-2 flex-grow text-mid">{brand}</p>
-                <p className=" text-amber-400 px-2 text-end font-semibold ">{rating}/5</p>
+                <p className=" text-amber-400 px-2 text-end font-semibold ">{rating}/5</p> 
             </div>
             <p className="text-3xl pr-2 text-end font-semibold text-mid">$ {price}</p>
             <div className="flex justify-between my-2 font-semibold">
                 <Link to={`/update/${_id}`} > 
-                    <button className="btn bg-mid text-amber-400  p-2 mx-2">Update</button>
+                    <button className="btn bg-mid text-amber-400 rounded-md p-2 mx-2">Update</button>
                 </Link>
                 <Link to={`/details/${_id}`}>
-                    <button className="btn bg-amber-400 text-mid p-2  mx-2">Details</button>
+                    <button className="btn bg-amber-400 text-mid p-2 rounded-md mx-2">Details</button>
                 </Link>
             </div>
         </div>
