@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Product from "./Product";
-import axios from "axios";
 
 
 const BrandPage = () => {

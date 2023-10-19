@@ -41,22 +41,22 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <MyCart></MyCart>,
+        element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
       },
       {
         path: '/brand/:title',
         element: <BrandPage></BrandPage>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.title}`)
+        loader: ({ params }) => axios.get(`http://localhost:5000/search/${params.title}`)
       },
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/update/${params.id}`)
+        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
       },
       {
         path: '/details/:id',
-        element: <Details></Details>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/details/${params.id}`)
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
       },
     ]
 

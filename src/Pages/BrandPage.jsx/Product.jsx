@@ -2,10 +2,7 @@ import pt from 'prop-types'
 import { Link } from 'react-router-dom';
 
 const Product = ({ data }) => {
-    console.log(data.length)
     let { _id, name, brand, url, rating, type, price } = data
-
-
 
     return (
         <div className="rounded-md overflow-hidden bg-fadegray">
