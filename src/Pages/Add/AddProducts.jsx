@@ -26,7 +26,7 @@ const AddProducts = () => {
         // console.log("Your input data:",data)
 
 
-        // axios.post('http://localhost:5000/product', data, { headers: { "content-type": "application/json" } })
+        // axios.post('https://assignment-10-pied.vercel.app/product', data, { headers: { "content-type": "application/json" } })
         axios.post('https://assignment-10-pied.vercel.app/product', data, { headers: { "content-type": "application/json" } })
             .then(() => {
                 Swal.fire({

@@ -42,22 +42,22 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: ()=> axios.get('http://localhost:5000/cart/')
+        loader: ()=> axios.get('https://assignment-10-pied.vercel.app/cart/')
       },
       {
         path: '/brand/:title',
         element: <BrandPage></BrandPage>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/search/${params.title}`)
+        loader: ({ params }) => axios.get(`https://assignment-10-pied.vercel.app/search/${params.title}`)
       },
       {
         path: '/update/:id',
         element: <PrivateRoute><Update></Update></PrivateRoute>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => axios.get(`https://assignment-10-pied.vercel.app/product/${params.id}`)
       },
       {
         path: '/details/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
+        loader: ({ params }) => axios.get(`https://assignment-10-pied.vercel.app/product/${params.id}`)
       },
 
 

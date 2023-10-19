@@ -29,7 +29,7 @@ const Update = () => {
             rating: rating,
         }
 
-        axios.put(`http://localhost:5000/product/${_id}`, newData, { headers: { "Content-type": "application/json" } })
+        axios.put(`https://assignment-10-pied.vercel.app/product/${_id}`, newData, { headers: { "Content-type": "application/json" } })
             .then(({ data }) => {
                 data.modifiedCount &&
                 Swal.fire({

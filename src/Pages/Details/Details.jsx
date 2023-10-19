@@ -10,7 +10,7 @@ const Details = () => {
 
     function handleCart() {
 
-        axios.post('http://localhost:5000/cart', data, { headers: { "Content-type": "application/json" } })
+        axios.post('https://assignment-10-pied.vercel.app/cart', data, { headers: { "Content-type": "application/json" } })
         .then(() => {
             Swal.fire({
                 icon: 'success',
@@ -32,9 +32,9 @@ const Details = () => {
 
     return (
         <section className="mb-12 mt-0">
-            <div className="flex justify-center gap-2 items-center p-4">
+            <div className="flex flex-col lg:flex-row justify-center gap-2 items-center p-4">
                 <figure>
-                    <img src={url} alt="" className="w-96 mx-auto" />
+                    <img src={url} alt="" className="w-full lg:w-96 mx-auto" />
                 </figure>
                 <div>
                     <h1 className="text-center text-5xl text-mid">{oldName}</h1>

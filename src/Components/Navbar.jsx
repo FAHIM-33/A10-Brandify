@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { RiMenu2Fill } from 'react-icons/ri';
-import { AiFillCloseCircle, AiFillLayout } from 'react-icons/ai';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../FirebaseAuth/AuthProvider";
 

@@ -9,7 +9,7 @@ const CartCard = ({ data, cart, setCart }) => {
 
     function handleDelete(){
 
-        axios.delete(`http://localhost:5000/cart/${_id}`)
+        axios.delete(`https://assignment-10-pied.vercel.app/cart/${_id}`)
         .then(({data})=>{
             if(data.deletedCount>0){
                 Swal.fire({
