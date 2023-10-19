@@ -18,7 +18,7 @@ const CartCard = ({ data }) => {
                 })
             }
         })
-        .catch((err)=>{
+        .catch(()=>{
             Swal.fire({
                 icon: 'error',
                 title:'Error!',    
