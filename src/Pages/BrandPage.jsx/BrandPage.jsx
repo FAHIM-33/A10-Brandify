@@ -1,4 +1,3 @@
-import {  useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Product from "./Product";
 
@@ -6,11 +5,7 @@ import Product from "./Product";
 const BrandPage = () => {
     let { data } = useLoaderData()
     let brand = useParams()
-
-    let [products, setPorducts] = useState(data)
-
-    console.log(products)
-
+// console.log(products)
 
     return (
         <div className="my-12">
@@ -18,8 +13,8 @@ const BrandPage = () => {
 
             <div className="flex gap-8 overflow-auto p-4 flex-wrap">
                 {
-                    products.length > 0 ?
-                    products.map(obj => <Product
+                    data.length > 0 ?
+                    data.map(obj => <Product
                         key={obj._id}
                         data={obj}
                     ></Product>)

@@ -42,6 +42,7 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+        loader: ()=> axios.get('http://localhost:5000/cart/')
       },
       {
         path: '/brand/:title',
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/update/:id',
-        element: <Update></Update>,
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
         loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
       },
       {
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: ({ params }) => axios.get(`http://localhost:5000/product/${params.id}`)
       },
+
+
     ]
 
   }

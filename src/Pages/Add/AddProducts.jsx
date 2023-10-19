@@ -7,13 +7,13 @@ const AddProducts = () => {
         e.preventDefault()
         let form = e.target;
         const name = form.name.value;
-        const brand = form.brand.value;
+        let brand = form.brand.value;
         const url = form.url.value;
         const type = form.type.value;
         const price = form.price.value;
         const discription = form.discription.value;
         const rating = form.rating.value;
-
+        brand = brand.charAt(0).toUpperCase()+brand.slice(1)
         let data = {
             name: name,
             brand: brand,

@@ -5,7 +5,7 @@ import { AuthContext } from './AuthProvider';
 
 
 const Login = () => {
-    let { login, googleLogin } = useContext(AuthContext)
+    let { login, googleLogin, Toast } = useContext(AuthContext)
     let nav = useNavigate()
     const handleLogin = (e) => {
         e.preventDefault()
@@ -13,21 +13,31 @@ const Login = () => {
         let password = e.target.password.value
         login(email, password)
             .then(() => {
-                // window.location.reload();
                 nav('/')
-                //    Sweet here................
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Logged in'
+                })
             })
-            .catch((error) => console.log('something wrong'))
+            .catch((error) => Toast.fire({
+                icon: 'error',
+                title: error.code
+            }))
     }
     const handleGoogleLogin = (e) => {
         e.preventDefault()
         googleLogin()
             .then(() => {
-                // window.location.reload();
                 nav('/')
-                // Sweet Here.................
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Logged in with Google'
+                })
             })
-            .catch((error) => console.log('Add sweet here'))
+            .catch((error) => Toast.fire({
+                icon: 'error',
+                title: error.code
+            }))
 
     }
     return (

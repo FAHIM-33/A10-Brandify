@@ -47,9 +47,11 @@ input:focus{
 }
 .btn:hover{
     scale: 1.04;
-    opacity: 0.8;
+    cursor: pointer;
 }
-
+.btn:active{
+    scale: 0.9;
+}
 
 
 

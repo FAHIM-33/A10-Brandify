@@ -1,11 +1,34 @@
 import { useLoaderData } from "react-router-dom";
 import './details.css'
 import { BsCart3 } from 'react-icons/bs';
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Details = () => {
     let { data } = useLoaderData()
     let { _id, name: oldName, brand, url, rating, type, price, discription } = data
 
+    function handleCart() {
+
+        axios.post('http://localhost:5000/cart', data, { headers: { "Content-type": "application/json" } })
+        .then(() => {
+            Swal.fire({
+                icon: 'success',
+                title:`${oldName} added to cart`,    
+                text: 'Added to cart!',
+                // footer: 'Product has been Updated'
+            })
+            
+        })
+        .catch(()=>{
+            Swal.fire({
+                icon: 'error',
+                title:'Could not add to Cart',    
+                text: 'It can already exist in cart',
+                // footer: ''
+            })
+        })
+    }
 
     return (
         <section className="mb-12 mt-0">
@@ -15,7 +38,7 @@ const Details = () => {
                 </figure>
                 <div>
                     <h1 className="text-center text-5xl text-mid">{oldName}</h1>
-                    <button className="flex items-center justify-center gap-4 btn  bg-amber-400 w-full mx-auto mt-4 p-4 rounded-lg text-xl"><BsCart3></BsCart3> Add to cart</button>
+                    <button onClick={handleCart} className="flex items-center justify-center gap-4 btn  bg-amber-400 w-full mx-auto mt-4 p-4 rounded-lg text-xl"><BsCart3></BsCart3> Add to cart</button>
                 </div>
             </div>
 
