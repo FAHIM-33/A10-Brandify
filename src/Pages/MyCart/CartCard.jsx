@@ -3,8 +3,10 @@ import pt from 'prop-types'
 import { BsCart3 } from 'react-icons/bs';
 import Swal from 'sweetalert2';
 
-const CartCard = ({ data }) => {
+const CartCard = ({ data, cart, setCart }) => {
     let { _id, name, brand, url, rating, type, price } = data
+
+
     function handleDelete(){
 
         axios.delete(`http://localhost:5000/cart/${_id}`)
@@ -16,6 +18,8 @@ const CartCard = ({ data }) => {
                     text: 'Item Deleted Succesfully',
                     footer: `${name} has been deleted`
                 })
+                let remaining = cart.filter(obj => obj._id !== _id)
+                setCart(remaining)
             }
         })
         .catch(()=>{
@@ -26,6 +30,7 @@ const CartCard = ({ data }) => {
             })
         })
     }
+
     return (
         <div>
             <div className="rounded-md overflow-hidden bg-fadegray pt-2">
@@ -46,5 +51,7 @@ const CartCard = ({ data }) => {
 };
 CartCard.propTypes = {
     data: pt.object,
+    cart: pt.array,
+    setCart: pt.func,
 }
 export default CartCard;

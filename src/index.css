@@ -1,32 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
+
+@layer base {
+    /* For light */
+    :root {        
+        --color-low: 51 51 51;
+        --color-mid: 34 34 34;
+        --color-high: 17 17 17;
+        --color-background: 255 255 255;
+        /* ... */
+    }
+
+    :root[data-theme="dark"] {
+        --color-low: 51 51 51;
+        --color-mid: 202 202 202;
+        --color-high: 17 17 17;
+        --color-background: 0 0 0;
+    }
+}
+
+.shit{
+    color: rgb(211, 211, 211);
+} 
+
+body {
+    background-color: var(--color-background);
     position: relative;
     font-family: 'Poppins', sans-serif;
     max-width: 1440px;
     margin: 0 auto;
 }
-nav a{
+
+nav a {
     padding: 0.35rem 0.4rem;
     border: 2px solid transparent;
     border-radius: 6px;
     transition: all 0.2s;
     height: fit-content;
 }
-nav a:hover{
+
+nav a:hover {
     background-color: rgba(255, 166, 0, 0.171);
 }
+
 .active {
     border: 2px solid #fbbf24;
     transition: all 0.2s;
 }
 
-label{
+label {
     font-size: 1.2rem;
 }
 
@@ -38,21 +64,35 @@ input {
     outline: none;
     transition: all 0.2s;
 }
-input:focus{
+
+input:focus {
     outline: 3px solid #fbbf24;
 }
 
-.btn{
+.btn {
     transition: all 0.2s;
 }
-.btn:hover{
+
+.btn:hover {
     scale: 1.04;
     cursor: pointer;
 }
-.btn:active{
+
+.btn:active {
     scale: 0.9;
 }
 
+.sidebar {
+    /* display: none; */
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    padding: 1rem;
+    /* bottom: -1.5rem; */
+    top: 3.5rem;
+    background-color: #222;
+    /* height: ; */
+}
 
 
 

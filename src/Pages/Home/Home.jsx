@@ -5,7 +5,7 @@ import Brands from "./Brands";
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Banner></Banner>
             <Brands></Brands>
             <Footer></Footer>

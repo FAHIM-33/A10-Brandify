@@ -5,17 +5,16 @@ import { AuthContext } from "../FirebaseAuth/AuthProvider";
 
 const Navbar = () => {
     let { user, logOut } = useContext(AuthContext)
-    let [show, setShow] = useState(false)
+    // let [show, setShow] = useState(false)
     let links = <>
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/add'>Add product</NavLink>
         <NavLink to='/cart'>My Cart</NavLink>
     </>
 
-
-        function handleClick(){
-            logOut()
-        }
+    function handleClick() {
+        logOut()
+    }
 
     return (
         <nav className="grid grid-cols-3 bg-low text-white p-2">
@@ -28,16 +27,16 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-end">
                 {
-                    user ? <figure className="flex gap-2 items-center">
+                    user ? <figure id="dark-mode-toggle" className="flex gap-2 items-center">
                         {
                             user?.photoURL ? <img className="rounded-full w-10" src={user.photoURL} alt="" />
                                 :
                                 <img className="rounded-full w-10" src="https://i.ibb.co/FwYsHLt/pngwing-com-1.png" alt="" />
                         }
                         <div className="bg-low border rounded-md py-1 px-2 ">
-                            {/* <p className="whitespace-nowrap bg-mid">{user.displayName}</p> */}
                             <button onClick={handleClick} className="btn ">Logout</button>
                         </div>
+
                     </figure>
                         :
                         <Link to='/login' className="btn bg-white hover:bg-amber-400 text-low font-semibold">Login</Link>

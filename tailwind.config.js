@@ -5,12 +5,17 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
+
     extend: {
       colors: {
-        high: '#111',
-        mid : '#222',
-        low : '#333',
+        low: 'rgb(var(--color-low) / <alpha-value>)',
+        mid: 'rgb(var(--color-mid) / <alpha-value>)',
+        high: 'rgb(var(--color-high) / <alpha-value>)',
+        // high: '#111',
+        // mid : '#222',
+        // low : '#333',
         fadegray : '#8f8f8f2d'
       },
     },
