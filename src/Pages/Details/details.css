@@ -1,0 +1,9 @@
+th,td{
+    border: 1px solid #222;
+    text-align: start;
+    padding: 0.3rem 1rem;
+    
+}
+tr:nth-child(odd){
+    background-color: #72727241 ;
+}
