@@ -1,12 +1,12 @@
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const Update = () => {
     let { data } = useLoaderData()
     let { _id, name: oldName, brand, url, rating, type, price, discription } = data
-
+    let nav = useNavigate()
     function handleUpdate(e) {
         e.preventDefault()
         let form = e.target;
@@ -38,6 +38,7 @@ const Update = () => {
                     text: 'Updated succesfully!',
                     footer: 'Product has been Updated'
                 })
+                nav(-1)
             })
             .catch(() => {
                 Swal.fire({

@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const BrandCard = ({ card }) => {
     let nav = useNavigate()
+
     function handleCard() {
         let title = card.name
         nav(`/brand/${title}`)
 
     }
+    
     return (
         <div onClick={handleCard} className="hover:cursor-pointer text-center flex bg-fadegray hover:bg-[#33333359] justify-center items-center flex-col rounded-md">
             <figure className="flex-grow p-4">

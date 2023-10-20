@@ -61,15 +61,15 @@ const Navbar = () => {
             <nav className="grid md:hidden items-center bg-low grid-cols-2 px-1 py-1 abosolute z-20 text-white ">
 
                 <div className="flex items-center justify-start">
-                    <div onClick={() => setOpen(!open)} className="text-3xl mx-1">
+                    <div onClick={() => setOpen(!open)} className="text-3xl ml-1 mr-2">
                         {
                             open ? <AiFillCloseCircle></AiFillCloseCircle>
                                 :
                                 <RiMenu2Fill></RiMenu2Fill>
                         }
                     </div>
-                    <img src="/pngwing.com.png" alt="logo" className="w-16 -m-3" />
-                    <p className="text-xl">Brandify</p>
+                    <img src="/pngwing.com.png" alt="logo" className="w-10 lg:w-16 -m-3" />
+                    <p className="text-base ml-1 mt-1">Brandify</p>
 
 
 
@@ -82,7 +82,7 @@ const Navbar = () => {
 
                 <div className="flex items-center justify-end">
                     {
-                        user ? <figure id="dark-mode-toggle" className="flex gap-2 items-center">
+                        user ? <figure className="flex gap-2 items-center">
                             {
                                 user?.photoURL ? <img className="rounded-full w-10" src={user.photoURL} alt="" />
                                     :
