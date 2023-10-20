@@ -28,7 +28,7 @@ const Ad = ({ brand }) => {
     let swiperRules = {
         modules: [Navigation, Pagination, A11y],
         spaceBetween: 50,
-        slidesPerView: isMobile ? 1.3 : 3,
+        slidesPerView: isMobile ? 1.3 : 2.7,
         navigation: true,
         pagination: { clickable: true },
         onSwiper: (swiper) => console.log(swiper),
