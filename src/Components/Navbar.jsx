@@ -36,6 +36,9 @@ const Navbar = () => {
 
                 <div className="flex items-center justify-end">
                     {
+                        user && <p className="mr-2">{user.displayName}</p>
+                    }
+                    {
                         user ? <figure id="dark-mode-toggle" className="flex gap-2 items-center">
                             {
                                 user?.photoURL ? <img className="rounded-full w-10" src={user.photoURL} alt="" />
